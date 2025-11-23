@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cevital - Carrières & Stages</title>
+    <style>
+        :root {
+            --cevital-blue: #0054a6; /* Bleu Cevital approximatif */
+            --cevital-yellow: #ffcc00; /* Jaune Cevital */
+            --bg-color: #f4f6f8;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px; /* Format mobile */
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .logo-area {
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+
+        .logo-placeholder {
+            /* Remplacer par votre logo <img> plus tard */
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--cevital-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--cevital-blue);
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Styles des Boutons */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 50px; /* Arrondi style Linktree */
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Boutons Principaux */
+        .btn-main {
+            background-color: white;
+            color: var(--cevital-blue);
+            border: 2px solid var(--cevital-blue);
+        }
+
+        .btn-main:hover {
+            background-color: var(--cevital-blue);
+            color: white;
+        }
+
+        /* Boutons Filiales */
+        .btn-entity {
+            background-color: white;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-entity:hover {
+            border-color: var(--cevital-yellow);
+            background-color: #fffbea;
+        }
+
+        /* Bouton Retour */
+        .btn-back {
+            background: none;
+            border: none;
+            color: #777;
+            margin-bottom: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        /* Gestion de l'affichage (Cacher/Montrer) */
+        .hidden {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="logo-area">
+            <div class="logo-placeholder">GROUPE CEVITAL</div>
+        </div>
+
+        <div id="main-menu" class="fade-in">
+            <h1>Bienvenue au Forum JENTHEC</h1>
+            <p>Choisissez une option pour continuer :</p>
+            
+            <button class="btn btn-main" onclick="showSection('stages')">🎓 Offres de Stages</button>
+            <button class="btn btn-main" onclick="showSection('cv')">🚀 Dépose ton CV</button>
+        </div>
+
+        <div id="section-stages" class="hidden fade-in">
+            <button class="btn-back" onclick="goBack()">⬅ Retour</button>
+            <h1>Nos Offres de Stages</h1>
+            <p>Sélectionnez la filiale qui vous intéresse :</p>
+
+            <a href="https://www.cevital.com" class="btn btn-entity" target="_blank">Cevital Groupe</a>
+            <a href="LINK_AGRO_STAGES" class="btn btn-entity" target="_blank">Cevital Agro-Industrie</a>
+            <a href="LINK_OXXO_STAGES" class="btn btn-entity" target="_blank">Oxxo</a>
+            <a href="LINK_MFG_STAGES" class="btn btn-entity" target="_blank">MFG</a>
+            <a href="LINK_NUMILOG_STAGES" class="btn btn-entity" target="_blank">Numilog</a>
+            <a href="LINK_BRANDT_STAGES" class="btn btn-entity" target="_blank">Samha / Brandt</a>
+            <a href="LINK_ALSEV_STAGES" class="btn btn-entity" target="_blank">Alsev</a>
+        </div>
+
+        <div id="section-cv" class="hidden fade-in">
+            <button class="btn-back" onclick="goBack()">⬅ Retour</button>
+            <h1>Candidature Spontanée</h1>
+            <p>Déposez votre CV chez :</p>
+
+            <a href="https://www.cevital.com" class="btn btn-entity" target="_blank">Cevital Groupe</a>
+            <a href="LINK_AGRO_CV" class="btn btn-entity" target="_blank">Cevital Agro-Industrie</a>
+            <a href="LINK_OXXO_CV" class="btn btn-entity" target="_blank">Oxxo</a>
+            <a href="LINK_MFG_CV" class="btn btn-entity" target="_blank">MFG</a>
+            <a href="LINK_NUMILOG_CV" class="btn btn-entity" target="_blank">Numilog</a>
+            <a href="LINK_BRANDT_CV" class="btn btn-entity" target="_blank">Samha / Brandt</a>
+            <a href="LINK_ALSEV_CV" class="btn btn-entity" target="_blank">Alsev</a>
+        </div>
+
+        <footer>
+            © 2025 Groupe Cevital - DRH
+        </footer>
+
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Cacher le menu principal
+            document.getElementById('main-menu').classList.add('hidden');
+            
+            // Montrer la section demandée
+            document.getElementById('section-' + sectionId).classList.remove('hidden');
+        }
+
+        function goBack() {
+            // Cacher toutes les sous-sections
+            document.getElementById('section-stages').classList.add('hidden');
+            document.getElementById('section-cv').classList.add('hidden');
+            
+            // Montrer le menu principal
+            document.getElementById('main-menu').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
